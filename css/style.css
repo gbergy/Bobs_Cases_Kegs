@@ -1,0 +1,425 @@
+/************** Notes Section **************?
+/* This is a comment. can span multiple lines */
+
+/* CSS Syntax:
+
+selector {
+	property: value;
+	properrty: value;
+}
+*/
+
+/*------------Pseudo Selector --------------
+
+	#details a:link, #details a:visited  { /* selects links during their default state (un-touced) 
+	select links that have already been clicked (visted) 
+
+	-------------------------------*/
+
+/*------------ID Selector -----------------------
+	
+	(apply to one and only one unique element per page, cant use on mult elements, for that use class instead) use for something that has only one function ie video, think as a unique identity
+
+	-------------------------------*/
+
+/*-------------Descendent Selector -----------------------
+
+	#logo h1 { /* selects only <h1> inside ('the descendent of', 'the child of' ) the element id="logo" 
+	font-family: 'Devonshire', cursive;
+	}
+	-----------------------------------*/ 
+
+/*------------- Class Selector -------------------------
+
+	(apply to as many elements as you like such as all h2 elements by including a class tag in your html)
+	
+	--------------------------------*/
+
+/* ----------------- Box-Sizing Property  ------------------------------
+	IE model value = border-box (works in 100% of broswers)
+	W3C model value = content-box (works in 94.3% of browsers)
+	-------------------------------------------------------------------*/ 
+
+/* ------------------ Padding or Margin --------------------------------------
+	1 value = effects all sides (padding:10px)
+	2 values = top & bottom then left & right (padding: 10px 20px)
+	3 values = first = top, second = left & right, third = bottom (padding: 10px 20px 35px)
+	4 values = first = top, second = right, third bottom, fourth left (clockwise)
+	--------------------------------------------------------------------*/ 
+
+/*************************************** End Notes **********************************/
+
+
+
+/***************************** Web Fonts ********************************/
+@import url(http://fonts.googleapis.com/css?family=Share+Tech);
+@import url(http://fonts.googleapis.com/css?family=Montaga);
+@import url(http://fonts.googleapis.com/css?family=Devonshire);
+@import url(http://fonts.googleapis.com/css?family=Racing+Sans+One);
+@import url(http://fonts.googleapis.com/css?family=Bubbler+One);
+
+/****************************** Fixes ***********************************/
+
+* {/* * = select all, fix for floating sections so everything can fit in all browsers as they are supposed to appear */ 
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+img, video, audio, iframe, form, table, figure { /* scale all media and images for responsive layout */
+	width: 100%;
+}
+
+.clearfix:after {/* fix for collasping parent when child is floated */
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	line-height: 0;
+}
+
+/**************************** Global **************************************/
+
+body {/* remember ../ get you out of the css file and then go into images */
+	background: url(../images/handmadepaper.png);
+}
+
+h2, h3 {
+	margin-bottom: 5px;
+}
+
+ul, ol {
+	margin-bottom: 10px;
+}
+
+li {
+	margin-left: 20px;
+}
+
+p, address {
+	margin: 0 0 25px;
+	font-size: 14px;
+}
+
+figure {
+	margin: 0 0 10px;
+}
+	figcaption {
+	/*font-weight: normal; 
+	font-size: 12px;
+	line-height: 1.5em;
+	font-family: Georgia, "Times New Roman", serif;*/
+	font: normal 12px/1.5em 'Share Tech', sans-serif;
+	color: #777; /* 16 color names, hexadecimal, rgba */
+	text-align: left;
+	}
+
+
+table {
+	width: 100%;
+	margin: 0 0 20px;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc; 
+}
+
+
+tr:nth-child(even) {
+	background-color: #efefef; 
+}
+
+tr, td {
+	padding: 10px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+th {
+	background: #555;
+	color: white;
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 5px;
+	box-shadow: 0 3px 5px #ccc;
+	border: 1px solid #ccc;	
+}
+
+input[type="submit"] {
+	margin-top: 5px;
+	width: 100px;
+	background: black;
+	color: white;
+	border-radius: 25px;
+	border: 0;	
+}
+
+input[type="submit"]:hover {
+	background: #555;
+}
+
+iframe {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	height: 353px;
+	width: 100%;
+}
+
+/* p { (selects all <p> Type selector) 
+	font-size: 16px; (px, pt, %, em -- avoid pt varies from broswer)
+	line-height: 1.5em;
+} */ 
+
+.border_right {
+	border-right: 1px dotted #96B5CC;
+	padding-right: 20px;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto; 	
+}
+
+.shadow {
+	box-shadow: 0 3px 10px #333;
+}
+
+.nice_heading { /* selects elements with a class = to nice_heading */
+	font-family: 'Montaga', serif;
+	color: rgba(255,220,190,1);
+	text-shadow: 0 2px 3px #000;
+}
+
+/*.box {
+	margin: 10px;
+	padding: 20px;
+	background-color: #F47A20;
+	background-image: -moz-linear-gradient(#FAA51A, #F47A20);
+	display: inline-block;
+	border: 3px black double;
+	-webkit-border-radius: 20px;
+	box-shadow: 5px 5px 5px #888;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	-moz-box-box-shadow: 5px 5px 5px #888;
+}
+
+.media {
+	margin: 10px;
+	padding: 20px;
+	background-color: lime;
+	background-image: -moz-linear-gradient(#FAA51A, #F47A20);
+	display: inline-block;
+	border: 3px black double;
+	-webkit-border-radius: 20px;
+	box-shadow: 5px 5px 5px #888;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	-moz-box-box-shadow: 5px 5px 5px #888;
+	float: left; 
+}
+
+.content {
+	clear: both;
+}*/
+
+/******************* Header ******************/
+
+/***************** Nav Bar ******************/
+
+#nav_bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	background: url(../images/header-fade.gif);
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+
+	#nav_bar nav {
+		border-left: 1px solid #ccc;
+	}
+
+		#nav_bar nav a {
+			display: inline-block;
+			width: 20%;/* we want it to span 100% of the wrapper and broken up evenly so since we have 5 buttons 100/5 = 20% */
+			margin: 0;
+			padding: 22px 0;
+			text-transform: uppercase;
+			color: black;
+			text-align: center;
+			border-right: 1px solid #ccc;
+			text-decoration: none;/* take away link highlight */
+			font: 20px "Trebuhet MS", Arial, sans-serif;
+		}
+
+		#nav_bar a.selected {
+			background: black;
+			color: white;
+		}
+
+		#nav_bar nav a:hover {
+			color: white;
+			/* gradient */
+			background: rgb(149,149,149); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(149,149,149,1) 0%, rgba(13,13,13,1) 46%, rgba(1,1,1,1) 50%, rgba(10,10,10,1) 53%, rgba(78,78,78,1) 76%, rgba(56,56,56,1) 87%, rgba(27,27,27,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(46%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(53%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+		}
+
+/******************** Logo *******************/
+
+#logo {
+	padding: 85px 0 25px; 
+	clear: both;
+	/* gradient */
+	background: rgb(212,228,239); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(212,228,239,1)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc',GradientType=0 ); /* IE6-9 */
+}
+
+	#logo h1 { /* selects only <h1> inside ('the descendent of', 'the child of' ) the element id="logo"*/ 
+		margin: 0;
+		padding-top: 20px;
+		display: inline-block;
+		font-family: 'Racing Sans One', cursive;
+		background: url(../images/logo_crown_emboss.png) no-repeat top left;
+	}
+
+
+	#logo h2 {
+		margin: 0;
+		display: block;
+		font-family: 'Bubbler One', sans-serif;
+	}
+
+/******************** Content *************************/
+
+#wood {
+	/*background-image: url(../images/wood.jpg), url(../images/wood_slice.jpg);
+	background-position: center top, left top;
+	background-repeat: no-repeat, repeat-y;
+	padding: 30px 0;*/
+	background-image: url(../images/beer_labels.jpg);
+	background-position: left top;
+	background-repeat: repeat;
+	padding: 30px 0;
+	/* CSS3 allows for multi images incase the image is too small for all your content*/
+}
+
+	/**************** Sections *****************/
+	
+	section {
+		padding: 20px;
+		background: white;
+	}
+
+	section a {
+	color: #B2912E;
+	text-decoration: underline;
+	}
+
+	/* Positioning Classes */
+
+	.col1_left {/* positioning one column of three to the left*/
+		float: left;
+		width: 32.6%;/* 100% of the page - 2% (1% margin on both the left and right sides) = 98% then /3 columns = 32.6% */
+		margin: 0 0 20px;
+	}
+
+	.col1_mid {/* middle column thus margin */ 
+		float: left;
+		width: 32.6%;
+		margin: 0 1% 20px 1%;/* here's the -2% maring to get32.6% */
+	}
+
+	.col1_right {
+		float: right;
+		width: 32.6%;
+		margin: 0 0 20px;
+	}
+
+	.col2_left {/* positioning 2 columns */
+		float: left;
+		width: 66.4%;/* 100% - 1% margin (margin btw only 2 columns) = 99% then / 2 columns = 66,4% */
+		margin: 0 1% 20px 0;
+	}
+
+	.col2_right {
+		float: right;
+		width: 66.4%;
+		margin: 0 0 20px 1%;
+	}
+
+	.col3 {/* position takes up all 3 columns */
+		margin: 0 0 20px;
+	}
+
+
+/********************* Details ***********************/
+
+#details {
+	clear: both;
+	padding: 20px 10px;
+	/* gradient */
+	background: rgb(212,228,239); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(212,228,239,1) 0%, rgba(55,141,204,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(212,228,239,1)), color-stop(100%,rgba(55,141,204,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(212,228,239,1) 0%,rgba(55,141,204,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(212,228,239,1) 0%,rgba(55,141,204,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(212,228,239,1) 0%,rgba(55,141,204,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(212,228,239,1) 0%,rgba(55,141,204,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#378dcc',GradientType=0 ); /* IE6-9 */
+}
+
+	}#details a:link, #details a:visited  { /* selects links during their default state (un-touced) */ /* select links that have already been clicked (visted) */
+		color: black;
+		text-decoration: none;
+	}	
+
+	#details a:hover { select link during mouse house */
+		color: black;
+		text-decoration: overline;
+	}
+
+	#details a:active {/* select links while the mouse button is depressed during the act of clicking */
+		color: red;
+		text-decoration: none;
+	}
+
+/********** Footer **********/
+
+footer {
+	text-align: center;
+	font-size: 10px;
+	color: #555;
+	padding: 10px 0 20px;
+}
+
+	footer a {
+		color: #555;
+		text-decoration: underline;
+	}
+
+/* code copyright Greg Goldberg 2013 */
+
+
+
+	
